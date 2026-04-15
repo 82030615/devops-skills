@@ -1,0 +1,69 @@
+{
+  "skill_name": "java-deep-analysis",
+  "evals": [
+    {
+      "id": 1,
+      "name": "订单状态机分析",
+      "prompt": "请分析订单模块的状态机功能，入口是 OrderService 的 processOrder 方法。需要输出类图、状态机图、时序图和控制流程图。",
+      "expected_output": "包含Mermaid类图、状态图、时序图、流程图的Markdown分析报告",
+      "expectations": [
+        "输出包含classDiagram",
+        "输出包含stateDiagram-v2",
+        "输出包含sequenceDiagram",
+        "输出包含flowchart TD",
+        "标注FQCN和AST节点类型",
+        "分析异常边界和并发安全性"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "支付流程分析",
+      "prompt": "对 PaymentService 进行深度分析，重点关注支付状态流转、异常处理路径和事务边界。",
+      "expected_output": "支付模块的完整分析报告，包含状态转换和异常路径",
+      "expectations": [
+        "识别状态变量和状态转换点",
+        "标注@Transactional等事务边界",
+        "识别未捕获的异常风险点",
+        "生成状态机Mermaid图",
+        "生成时序图展示调用链"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "工作流引擎分析",
+      "prompt": "分析 WorkflowEngine 的核心逻辑，包括任务调度、状态管理和扩展点设计模式。",
+      "expected_output": "工作流引擎的架构分析报告",
+      "expectations": [
+        "识别设计模式（如观察者、责任链等）",
+        "分析扩展点和插件机制",
+        "生成类图展示核心组件关系",
+        "生成流程图展示调度逻辑",
+        "标注并发控制机制"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "权限验证模块分析",
+      "prompt": "深度分析 AuthService 的权限验证逻辑，包括认证流程、权限校验链和缓存机制。",
+      "expected_output": "权限模块的完整调用链和状态分析",
+      "expectations": [
+        "追踪从入口到数据库的完整链路",
+        "识别责任链或拦截器模式",
+        "分析缓存读写策略",
+        "生成时序图展示认证流程",
+        "标注安全配置点"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "负面测试-简单查询",
+      "prompt": "帮我找一下 UserService 的 getUserById 方法在哪里",
+      "expected_output": "技能不应触发，或只提供简单定位",
+      "expectations": [
+        "识别这是简单查询而非深度分析需求",
+        "不提供Mermaid图表",
+        "不提供AST分析"
+      ]
+    }
+  ]
+}

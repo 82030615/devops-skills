@@ -11,6 +11,7 @@ This file provides guidance to CodeBuddy Code when working with code in this rep
 | 技能目录 | 技能名称 | 描述 | 触发词 |
 |---------|---------|------|--------|
 | `write-ears-prd/` | write-ears-prd | 基于 EARS 规范编写结构化 PRD | 编写PRD、需求文档、EARS规范 |
+| `java-deep-analysis/` | java-deep-analysis | 深度探索Java代码库功能，生成类图、状态机、时序图等Mermaid图表 | 分析Java功能、Java代码深度分析、代码逻辑解构 |
 
 ## 技能目录结构约定
 
