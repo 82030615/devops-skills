@@ -1,0 +1,34 @@
+{
+  "test_prompts": [
+    {
+      "id": 1,
+      "name": "查找方法定义和调用链",
+      "prompt": "帮我在 D:/work/workspace_cbs/cbs-dealer 这个 Java 项目中找到 saveDealerAppChgAccount 这个方法，看看有哪些地方调用了它",
+      "expected": "使用 ast-grep 命令搜索方法定义和调用位置，输出方法所在文件、行号、调用上下文，并展示调用链分析方法"
+    },
+    {
+      "id": 2,
+      "name": "查找带注解的 Service 方法",
+      "prompt": "在 Java 项目中查找所有使用了 @Transactional 注解的 public 方法",
+      "expected": "使用 ast-grep scan 配合 inline-rules 或 YAML 规则，搜索带特定注解的方法，展示具体命令"
+    },
+    {
+      "id": 3,
+      "name": "分析类继承关系",
+      "prompt": "查找项目中所有继承自 ServiceImpl 的类，并列出它们实现的接口",
+      "expected": "使用 ast-grep pattern 搜索类定义，分析继承和实现关系，输出类名列表"
+    },
+    {
+      "id": 4,
+      "name": "分析方法调用链",
+      "prompt": "帮我分析这个方法被哪些 Controller 调用了，调用链路是什么样的",
+      "expected": "使用方法调用链分析工作流，展示从定义到调用的完整链路分析步骤"
+    },
+    {
+      "id": 5,
+      "name": "扫描代码质量问题",
+      "prompt": "帮我扫描一下项目里有哪些空的 catch 块和 System.out.println 调用",
+      "expected": "使用代码质量扫描工作流，展示潜在问题模式的搜索命令和结果"
+    }
+  ]
+}
