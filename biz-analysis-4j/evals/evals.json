@@ -1,0 +1,128 @@
+{
+  "skill_name": "biz-analysis-4j",
+  "description": "Java业务功能分析技能评估测试集，验证实体定位、入口识别、链路追踪、实体关系、状态机和文档生成能力",
+  "evals": [
+    {
+      "id": 1,
+      "name": "标准实体分析-订单",
+      "prompt": "分析一下 Order 实体，项目路径是 ./demo-shop",
+      "expected_output": "完整的业务分析报告，包含Order实体对应的Controller入口、Service调用链、状态机分析和Mermaid图表",
+      "expectations": [
+        "识别到 OrderController 中的入口方法",
+        "追踪到 OrderService 和 OrderRepository 的调用链",
+        "生成 Order 实体的类图（包含字段和方法）",
+        "生成创建订单的时序图",
+        "识别 OrderStatus 枚举并生成状态机图",
+        "输出标准 Markdown 格式文档"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "通过表名反向查找实体",
+      "prompt": "分析表 t_user 的业务逻辑",
+      "expected_output": "通过MyBatis XML或JPA注解找到User实体类，然后生成完整的业务分析报告",
+      "expectations": [
+        "通过表名 t_user 成功定位到 User 实体类",
+        "找到 UserController 和相关 Service",
+        "分析 User 实体的关联关系（如 UserProfile）",
+        "生成包含 ER 图的分析报告"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "MQ入口识别-消息消费",
+      "prompt": "分析 Payment 实体，关注MQ消息处理的入口",
+      "expected_output": "识别到Payment相关的MQ监听器方法，分析支付回调的业务流程",
+      "expectations": [
+        "识别到 @RabbitListener 或 @KafkaListener 注解的方法",
+        "找到支付回调的消息处理方法",
+        "分析支付状态变更的完整链路",
+        "在报告中单独列出 MQ 入口点"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "定时任务入口分析",
+      "prompt": "分析 Order 实体，包括定时任务相关的业务逻辑",
+      "expected_output": "识别到与Order相关的定时任务，如超时取消、自动确认收货等",
+      "expectations": [
+        "识别到 @Scheduled 注解的方法",
+        "找到订单超时取消的定时任务",
+        "找到自动确认收货的定时任务",
+        "在报告中单独列出定时任务入口"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "复杂实体关联分析",
+      "prompt": "分析 Order 实体，提取所有关联实体和值对象",
+      "expected_output": "分析Order实体与OrderItem、Product、User等实体的关联关系",
+      "expectations": [
+        "识别到 @OneToMany 关联的 OrderItem 实体",
+        "识别到 @ManyToOne 关联的 User 实体",
+        "识别到 @Embedded 值对象（如 Address）",
+        "生成完整的 ER 图展示实体关系"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "状态机完整分析",
+      "prompt": "分析 Order 实体的状态机，展示所有状态流转",
+      "expected_output": "识别Order的所有状态和流转路径，生成状态图",
+      "expectations": [
+        "识别 OrderStatus 枚举的所有状态值",
+        "分析代码中的状态变更点",
+        "生成 Mermaid 状态图",
+        "列出每个状态的含义和流转条件"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "多层Service调用链追踪",
+      "prompt": "分析 Order 实体，展示从Controller到Repository的完整调用链",
+      "expected_output": "追踪多层Service调用，包括OrderService、OrderValidator、InventoryService等",
+      "expectations": [
+        "追踪 OrderController -> OrderService 调用",
+        "追踪 OrderService -> OrderValidator 调用",
+        "追踪 OrderService -> InventoryService 调用",
+        "追踪到 OrderRepository 层停止",
+        "生成展示多层调用的时序图"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "边界情况-不存在实体",
+      "prompt": "分析一个不存在的实体 UnknownEntity",
+      "expected_output": "友好提示实体不存在，不报错",
+      "expectations": [
+        "识别到实体 UnknownEntity 不存在",
+        "返回友好的错误提示",
+        "不生成空报告"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Mermaid图表语法正确性",
+      "prompt": "分析 Product 实体",
+      "expected_output": "生成的Mermaid图表语法正确，可以正常渲染",
+      "expectations": [
+        "类图使用正确的 classDiagram 语法",
+        "时序图使用正确的 sequenceDiagram 语法",
+        "状态图使用正确的 stateDiagram-v2 语法",
+        "ER图使用正确的 erDiagram 语法"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Markdown文档格式规范",
+      "prompt": "分析 User 实体",
+      "expected_output": "生成的Markdown文档结构清晰，符合标准格式",
+      "expectations": [
+        "使用正确的 Markdown 标题层级",
+        "表格格式正确",
+        "代码块标注语言类型",
+        "包含所有必需的章节"
+      ]
+    }
+  ]
+}

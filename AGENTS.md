@@ -12,6 +12,7 @@ This file provides guidance to CodeBuddy Code when working with code in this rep
 |---------|---------|------|--------|
 | `write-ears-prd/` | write-ears-prd | 基于 EARS 规范编写结构化 PRD | 编写PRD、需求文档、EARS规范 |
 | `ast-grep-4j/` | ast-grep-4j | 使用 ast-grep 分析 Java 代码，支持方法查找、调用链分析、类依赖分析 | 分析Java、查找方法、搜索代码、代码分析、ast-grep Java |
+| `biz-analysis-4j/` | biz-analysis-4j | 深度分析 Java 项目业务功能，生成包含类图、时序图、状态图的 Markdown 报告 | 业务分析、分析业务、Java业务分析、分析实体、分析表、业务逻辑分析 |
 
 ## 技能目录结构约定
 
