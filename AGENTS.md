@@ -11,6 +11,7 @@ This file provides guidance to CodeBuddy Code when working with code in this rep
 | 技能目录 | 技能名称 | 描述 | 触发词 |
 |---------|---------|------|--------|
 | `write-ears-prd/` | write-ears-prd | 基于 EARS 规范编写结构化 PRD | 编写PRD、需求文档、EARS规范 |
+| `ast-grep-4j/` | ast-grep-4j | 使用 ast-grep 分析 Java 代码，支持方法查找、调用链分析、类依赖分析 | 分析Java、查找方法、搜索代码、代码分析、ast-grep Java |
 
 ## 技能目录结构约定
 
