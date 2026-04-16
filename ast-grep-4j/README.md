@@ -131,9 +131,10 @@ ast-grep -p 'System.out.println($$$)' -l java <项目路径>
 ast-grep-4j/
 ├── SKILL.md              # 技能核心定义（AI 使用）
 ├── README.md             # 本文件（人类阅读）
-├── test-prompts.json     # 测试用例
 ├── evals/
-│   └── evals.json        # 评估测试配置
+│   ├── evals.json        # 评估测试配置
+│   ├── test-prompts.json # 测试用例
+│   └── results.tsv       # 优化历史记录
 └── references/
     └── rule_reference.md # ast-grep 规则语法参考
 ```
