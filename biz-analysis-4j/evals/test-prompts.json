@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "prompt": "分析一下 Order 实体类",
+    "expected": "生成包含业务概述、Controller入口、调用链路图(类图/时序图)、实体关系ER图、状态机分析(如有)、方法清单的完整Markdown报告"
+  },
+  {
+    "id": 2,
+    "prompt": "分析表 t_order",
+    "expected": "先通过MyBatis XML或@Table注解找到对应实体类，然后按实体类分析流程生成完整报告"
+  },
+  {
+    "id": 3,
+    "prompt": "@command://biz-analysis-4j  @gbss-dealer-repository/src/main/java/com/infinitus/gbss/dealer/domain/MsrInheritApp.java 分析一下这个类",
+    "expected": "分析包含状态字段的实体，生成状态机分析章节，包括状态枚举、状态流转图、状态流转矩阵"
+  }
+]
