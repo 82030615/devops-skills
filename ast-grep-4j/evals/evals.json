@@ -1,0 +1,94 @@
+{
+  "skill_name": "ast-grep-4j",
+  "skill_description": "专门用于分析 Java 代码的 ast-grep 技能，帮助用户搜索代码中的方法调用、类定义、继承关系、注解使用等常见模式",
+  "trigger_words": ["分析Java", "查找方法", "搜索代码", "代码分析", "ast-grep Java"],
+  "evals": [
+    {
+      "id": 1,
+      "name": "查找方法定义和调用链",
+      "category": "标准场景测试",
+      "prompt": "帮我在 D:/work/workspace_cbs/cbs-dealer 这个 Java 项目中找到 saveDealerAppChgAccount 这个方法，看看有哪些地方调用了它",
+      "expected_behavior": "使用 ast-grep 命令搜索方法定义和调用位置，输出方法所在文件、行号、调用上下文，并展示调用链分析方法",
+      "expectations": [
+        "提供查找方法定义的 ast-grep 命令",
+        "提供查找方法调用的 ast-grep 命令",
+        "展示调用链分析工作流",
+        "命令明确标注项目路径占位符"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "查找带注解的 Service 方法",
+      "category": "标准场景测试",
+      "prompt": "在 Java 项目中查找所有使用了 @Transactional 注解的 public 方法",
+      "expected_behavior": "使用 ast-grep scan 配合 inline-rules 或 YAML 规则，搜索带特定注解的方法",
+      "expectations": [
+        "提供带 kind: method_declaration 的规则",
+        "使用 has 关系规则查找注解",
+        "包含 stopBy: end 配置",
+        "规则语法正确"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "分析类继承关系",
+      "category": "标准场景测试",
+      "prompt": "查找项目中所有继承自 ServiceImpl 的类，并列出它们实现的接口",
+      "expected_behavior": "使用 ast-grep pattern 搜索类定义，分析继承和实现关系",
+      "expectations": [
+        "提供继承查询的 pattern",
+        "使用 metavariables ($NAME, $T) 进行泛化匹配",
+        "输出格式清晰"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "分析方法调用链",
+      "category": "高级场景测试",
+      "prompt": "帮我分析这个方法被哪些 Controller 调用了，调用链路是什么样的",
+      "expected_behavior": "使用方法调用链分析工作流，展示从定义到调用的完整链路分析步骤",
+      "expectations": [
+        "展示工作流 A（调用链分析）",
+        "分步骤说明分析方法",
+        "使用 inside 关系规则分析上下文"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "扫描代码质量问题",
+      "category": "高级场景测试",
+      "prompt": "帮我扫描一下项目里有哪些空的 catch 块和 System.out.println 调用",
+      "expected_behavior": "使用代码质量扫描工作流，展示潜在问题模式的搜索命令和结果",
+      "expectations": [
+        "展示工作流 C（代码质量扫描）",
+        "提供空 catch 块查询命令",
+        "提供 System.out.println 查询命令",
+        "命令可直接执行"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "负面测试：拒绝重构请求",
+      "category": "负面测试",
+      "prompt": "帮我把项目里所有的 System.out.println 替换成 log.info",
+      "expected_behavior": "明确拒绝重构请求，说明本技能仅用于代码分析，并提供替代建议",
+      "expectations": [
+        "拒绝执行重写/替换操作",
+        "说明技能只读性质",
+        "可提供分析命令供用户手动修改参考"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "边界情况：复杂 YAML 规则调试",
+      "category": "边界情况测试",
+      "prompt": "我写的这个 YAML 规则为什么不生效？",
+      "expected_behavior": "引导用户查看 references/rule_reference.md，并提供调试建议",
+      "expectations": [
+        "建议查看 rule_reference.md",
+        "提供调试命令 --debug-query",
+        "列出常见 YAML 规则问题（缩进、language、stopBy）"
+      ]
+    }
+  ]
+}
