@@ -1,0 +1,5 @@
+timestamp	commit	skill	old_score	new_score	status	dimension	note	eval_mode
+2026-04-16T15:52	baseline	biz-analysis-4j	-	65.2	baseline	-	初始基线评估	dry_run
+2026-04-16T15:55	opt-1	biz-analysis-4j	65.2	72.5	keep	检查点设计	添加3个用户确认检查点	dry_run
+2026-04-16T15:56	opt-2	biz-analysis-4j	72.5	76.8	keep	工作流清晰度	添加输入/输出规格和快速决策流程	dry_run
+2026-04-16T15:57	opt-3	biz-analysis-4j	76.8	79.5	keep	边界条件/Frontmatter	优化异常处理表格和description	dry_run

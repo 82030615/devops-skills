@@ -1,0 +1,22 @@
+{
+  "test_prompts": [
+    {
+      "id": 1,
+      "prompt": "分析一下 Order 实体",
+      "expected": "生成包含业务概述、Controller接口、调用链路图、时序图、ER图、状态机分析、方法清单、分析总结的完整报告",
+      "type": "happy_path"
+    },
+    {
+      "id": 2,
+      "prompt": "分析表 t_order",
+      "expected": "能够反向查找对应的实体类Order，然后生成完整的业务分析报告",
+      "type": "table_name_input"
+    },
+    {
+      "id": 3,
+      "prompt": "分析一下这个类 /src/main/java/com/example/User.java",
+      "expected": "提取类名User，定位到实体，生成包含用户管理相关业务的分析报告",
+      "type": "path_input"
+    }
+  ]
+}
